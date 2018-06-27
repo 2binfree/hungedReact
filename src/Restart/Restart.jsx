@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Restart_css';
 
 const Restart = ({ onClick }) => (
-  <div>
+  <div style={styles.restart}>
     <button onClick={() => onClick()}>Nouvelle partie</button>
   </div>
 );

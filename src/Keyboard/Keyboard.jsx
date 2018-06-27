@@ -5,7 +5,7 @@ import styles from './Keyboard_css';
 const keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 const Keyboard = ({ onClick, usedKeys }) => (
-  <div className="keyboard">
+  <div style={styles.keyboard}>
     {keys.split('').map(akey => (
       <div
         style={(usedKeys.includes(akey) ? styles.blueKey : styles.key)}

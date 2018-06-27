@@ -1,11 +1,11 @@
-.hunged {
-    display: flex;
+body {
+    font-family: 'Titillium Web', sans-serif
 }
 
-.hunged > .keyboard {
+.hunged {
     display: flex;
-    flex-wrap: wrap;
-    width: 600px;
-    margin: auto;
-    user-select: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-between;
+    height: 400px;
 }

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Trials_css';
 
 const Trials = ({ trials }) => (
-  <div className="trials">
-    {trials}
+  <div style={styles.trials}>
+    Essais : {trials}
   </div>
 );
 

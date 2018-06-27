@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import WebFont from 'webfontloader';
 import Keyboard from './Keyboard/Keyboard';
 import Word from './Word/Word';
 import Trials from './Trials/Trials';
@@ -8,8 +9,6 @@ import './App.css';
 const dictionary = 'saule acrobatique fouet forteresse pair associer gouverneur diagonale basket rouge application confrontation vieux plantation donner triste sans aide fabrication requin conclusion crash banquet diva plus grand accessoires intime banque apocalypse assassinat terrains clignotement gant refroidissement moment manille artificiel archiver chuchotement vessie gauche gril puissance croquer criquet pension famille chambre gargouillis ville sagesse collision malheureux chaotique gonflable prix horizontal adorable humainement biblique toutefois fulminer ambre attention';
 
 class App extends Component {
-
-
   static generateWord() {
     return dictionary.split(' ')[Math.floor(Math.random() * dictionary.split(' ').length)].toUpperCase();
   }
@@ -24,6 +23,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = this.initialState;
+
+    WebFont.load({
+      google: {
+        families:
+          ['Titillium Web:300,400,700', 'sans-serif', 'Roboto Mono'],
+      },
+    });
   }
 
   initialState = {
@@ -53,12 +59,12 @@ class App extends Component {
     const won = (App.computeDisplay(word, usedKeys) === word);
     return (
       <div className="hunged">
+        <Trials trials={this.state.trials} />
         <Word word={App.computeDisplay(this.state.word, this.state.usedKeys)} />
         {won === false ?
           <Keyboard onClick={this.handleKey} usedKeys={this.state.usedKeys} /> :
           <Restart onClick={this.init} />
         }
-        <Trials trials={this.state.trials} />
       </div>
     );
   }

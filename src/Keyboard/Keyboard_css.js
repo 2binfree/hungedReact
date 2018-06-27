@@ -1,11 +1,20 @@
+const keyboard = {
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  margin: '0 auto',
+  justifyContent: 'center',
+  fontFamily: 'Roboto Mono',
+};
 
 const key = {
-  fontSize: '2em',
-  flex: '1 1 calc(100% / 13 - 0.4em',
+  padding: '5px',
+  fontSize: '1.5em',
+  flex: '0 0 calc(100% / 26 - 0.4em)',
   outline: '0.08em solid silver',
-  margin: '0.2em',
   cursor: 'default',
   textAlign: 'center',
+  width: '1em',
 };
 
 const blueKey = {
@@ -14,4 +23,4 @@ const blueKey = {
   color: 'white',
 };
 
-export default { key, blueKey };
+export default { keyboard, key, blueKey };
